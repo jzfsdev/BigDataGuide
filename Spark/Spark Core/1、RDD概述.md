@@ -98,11 +98,11 @@ RDD概述
 <p align="center">
 </p>
 </p>  
-Spark RDD is an immutable collection of objects for the following reasons:
+### Spark RDD is an immutable collection of objects for the following reasons:
 
-Immutable data can be shared safely across various processes and threads
-It allows you to easily recreate the RDD
-You can enhance the computation process by caching RDD
+  * Immutable data can be shared safely across various processes and threads
+  * It allows you to easily recreate the RDD
+  * You can enhance the computation process by caching RDD
 
 3）依赖  
 &emsp; RDDs通过操作算子进行转换，转换得到的新RDD包含了从其他RDDs衍生所必需的信息，RDDs之间维护着这种血缘关系，也称之为依赖。如下图所示，依赖包括两种，一种是窄依赖，RDDs之间分区是一一对应的，另一种是宽依赖，下游RDD的每个分区与上游RDD(也称之为父RDD)的每个分区都有关，是多对多的关系。  
