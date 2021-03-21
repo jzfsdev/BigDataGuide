@@ -9,6 +9,7 @@ Spark运行模式
 
 &emsp; 从**物理部署层面**上来看，Spark主要分为两种类型的节点：**Master节点和Worker节**点。**Master节点**主要运行集群管理器的中心化部分，所承载的作用是分配Application到Worker节点，维护Worker节点，Driver，Application的状态。**Worker节点**负责具体的业务运行。  
 &emsp; 从**Spark程序运行层面**来看，Spark主要分为**驱动器节点和执行器节点**。
+&emsp;如果不是 standalone 模式，那么 cluster manager 会被 YARN，Mesos 或者 K8s 替代。[参考连接](https://spark.apache.org/docs/latest/cluster-overview.html)
 
 **1、Driver（驱动器节点）**  
 &emsp; Spark的驱动器是执行开发程序中的main方法的进程。它负责开发人员编写的用来**创建SparkContext、创建RDD，以及进行RDD的转化操作和行动操作代码的执行**。如果你是用spark shell，那么当你启动Spark shell的时候，系统后台自启了一个Spark驱动器程序，就是在Spark shell中预加载的一个叫作 sc的SparkContext对象。如果驱动器程序终止，那么Spark应用也就结束了。主要负责：  
