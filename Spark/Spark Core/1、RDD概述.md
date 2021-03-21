@@ -60,7 +60,7 @@ RDD概述
 &emsp; 如果Job的某个Stage阶段计算失败，框架也会自动进行任务的重新计算，默认次数也是4次。  
 5）**Checkpoint和Persist可主动或被动触发**  
 &emsp; RDD可以通过Persist持久化将RDD缓存到内存或者磁盘，当再次用到该RDD时直接读取就行。也可以将RDD进行检查点，检查点会将数据存储在HDFS中，该RDD的所有父RDD依赖都会被移除。  
-![Checkpoint 使用参考](https://blog.csdn.net/zg_hover/article/details/89349518)
+[Checkpoint 使用参考](https://blog.csdn.net/zg_hover/article/details/89349518)
 6）**数据调度弹性**  
 &emsp; Spark把这个JOB执行模型抽象为通用的有向无环图DAG，可以将多Stage的任务串联或并行执行，调度引擎自动处理Stage的失败以及Task的失败。  
 7）**数据分片的高度弹性**  
